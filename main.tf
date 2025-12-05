@@ -1,9 +1,7 @@
-variable "server-name" {
-  type        = string
-  description = "Name of a server to provision"
-}
+variable "a" { type = number }
+variable "b" { type = number }
+variable "oper" { type = string }
 
-
-output "out" {
-  value = var.server-name
+output "result" {
+  value = var.oper == "+" ? var.a + var.b : var.oper == "-" ? var.a - var.b : var.oper == "*" ? var.a * var.b : var.a / var.b
 }
